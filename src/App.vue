@@ -13,8 +13,8 @@
         <div class="col-12 col-sm-2 p-0 bg-primary" v-if="this.isLoggedIn">
           <div class="list-group mt-3" id="list-tab" role="tablist">
             <router-link to="/" style="font-size: 25px;" class="list-group-item list-group-item-action border-0 bg-primary text-white rounded-0"><h5 class="m-0 font-weight-bold">Upload Course</h5></router-link>
-            <router-link to="/"  style="font-size: 25px;" class="list-group-item list-group-item-action border-0 bg-primary text-white rounded-0"><h5 class="m-0 font-weight-bold">Categories</h5></router-link>
-            <router-link to="/"  style="font-size: 25px;"  class="list-group-item list-group-item-action border-0 bg-primary text-white rounded-0"><h5 class="m-0 font-weight-bold">User</h5></router-link>
+            <router-link to="/category"  style="font-size: 25px;" class="list-group-item list-group-item-action border-0 bg-primary text-white rounded-0"><h5 class="m-0 font-weight-bold">Categories</h5></router-link>
+            <router-link to="/user"  style="font-size: 25px;"  class="list-group-item list-group-item-action border-0 bg-primary text-white rounded-0"><h5 class="m-0 font-weight-bold">User</h5></router-link>
           </div>
         </div>
         <router-view/>
@@ -29,7 +29,12 @@
     name: 'app',
     data() {
       return {
-        isLoggedIn: false
+        isLoggedIn: true
+      }
+    },
+    methods: {
+      clone(arr){
+        return JSON.parse(JSON.stringify(arr));
       }
     }
   }
